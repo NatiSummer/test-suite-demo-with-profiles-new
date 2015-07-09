@@ -1,12 +1,15 @@
-# comment
+# this is setting for default tests run after each commit only (if .job created - don't use it)
 
 language: java
+
+addons:
+  artifacts:true
 
 before_install:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
 
-script: mvn clean test -Pregression
+script: mvn clean test -Psmoke
 
 notifications:
   email:
